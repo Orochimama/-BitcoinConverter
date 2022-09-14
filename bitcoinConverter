@@ -1,0 +1,24 @@
+package BitcoinConverter;
+import static java.lang.System.out;
+import java.util.Scanner;
+public class BitcoinConverter {
+
+	public static void main(String[] args) {
+		double bitcoinPrice = 0;
+		do {
+			Scanner keyboardPrice = new Scanner (System.in);
+			out.println("What is Bitcoin price today?");
+			bitcoinPrice = keyboardPrice.nextDouble();
+			if (bitcoinPrice % 1 != 0 || bitcoinPrice <= 0) {
+				out.println("Enter a positive integer, please");
+			}
+		} while (bitcoinPrice % 1 < 0 || bitcoinPrice % 1 > 0 || bitcoinPrice % 1 != 0 || bitcoinPrice <= 0);
+					
+	    Scanner keyboardHave = new Scanner (System.in);
+	    out.println("How much $ do you have?");
+	    double youHave = keyboardHave.nextDouble();
+	    
+	   double youCan = youHave / bitcoinPrice;
+	   out.println("You can buy " + youCan + " BTC");
+}
+}
